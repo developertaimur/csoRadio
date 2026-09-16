@@ -1,0 +1,15 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Temp / debug
+_*.png
+_*.py
+*.log
+
+# Local env
+.env
+.env.*
