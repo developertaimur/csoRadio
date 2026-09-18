@@ -220,7 +220,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 5.75rem 0 1.25rem;
+  padding: 7.25rem 0 1.5rem;
   box-sizing: border-box;
   overflow: hidden;
   background: #fff;
@@ -235,50 +235,48 @@ ul {
 }
 
 .hero-photo {
+  display: block;
   width: 100%;
   height: 100%;
   max-width: none;
-  display: block;
   object-fit: cover;
-  /* Zoomed-out framing: more building, lot, and sky */
-  object-position: 52% 22%;
-  filter: brightness(1.04) contrast(1.02) saturate(1.03);
+  /* Team + van on the right; open lot on the left for copy */
+  object-position: 72% 40%;
+  filter: brightness(1.04) contrast(1.03) saturate(1.05);
 }
 
-/* Light left wash — readable text, photo still visible */
+/* Soft left wash so copy/form stay readable */
 .hero-fade {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.88) 0%,
-    rgba(255, 255, 255, 0.7) 10%,
-    rgba(255, 255, 255, 0.42) 22%,
-    rgba(255, 255, 255, 0.16) 36%,
-    rgba(255, 255, 255, 0.04) 48%,
-    transparent 58%
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(255, 255, 255, 0.82) 18%,
+    rgba(255, 255, 255, 0.45) 36%,
+    rgba(255, 255, 255, 0.12) 52%,
+    transparent 64%
   );
   pointer-events: none;
 }
 
 @media (min-width: 1100px) {
   .hero {
-    padding-top: 6.15rem;
+    padding-top: 7.75rem;
   }
 
   .hero-photo {
-    object-position: 50% 20%;
+    object-position: 70% 38%;
   }
 
   .hero-fade {
     background: linear-gradient(
       92deg,
-      rgba(255, 255, 255, 0.9) 0%,
-      rgba(255, 255, 255, 0.68) 12%,
-      rgba(255, 255, 255, 0.38) 24%,
-      rgba(255, 255, 255, 0.14) 38%,
-      rgba(255, 255, 255, 0.03) 50%,
-      transparent 60%
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.85) 20%,
+      rgba(255, 255, 255, 0.4) 40%,
+      rgba(255, 255, 255, 0.1) 56%,
+      transparent 68%
     );
   }
 }
@@ -287,11 +285,15 @@ ul {
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
   flex: 1 1 auto;
   min-height: 0;
+}
+
+.hero-team {
+  display: none;
 }
 
 /*
@@ -1443,11 +1445,7 @@ ul {
     min-height: 100dvh;
     height: 100vh;
     height: 100dvh;
-    padding: 5.5rem 0 1.15rem;
-  }
-
-  .hero-photo {
-    object-position: 55% 24%;
+    padding: 6.75rem 0 1.25rem;
   }
 
   .hero-content {
@@ -1666,24 +1664,35 @@ ul {
   }
 
   .hero-bg {
+    display: block;
     position: relative;
     inset: auto;
     width: 100%;
     height: 210px;
     flex-shrink: 0;
-    border-radius: 0;
     overflow: hidden;
-    box-shadow: none;
     background: #d7e8f8;
   }
 
   .hero-photo {
+    display: block;
     position: static;
     width: 100%;
     height: 100%;
-    object-position: 55% 30%;
-    transform: none;
-    filter: brightness(1.03);
+    object-fit: cover;
+    object-position: 65% 40%;
+  }
+
+  .hero-fade {
+    background: linear-gradient(
+      180deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.55) 100%
+    );
+  }
+
+  .hero-team {
+    display: none;
   }
 
   .hero > .container {
@@ -1691,6 +1700,9 @@ ul {
     height: auto;
     min-height: 0;
     align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0 1.5rem;
   }
 
   .hero-content {
